@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/authentication"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.todo.TodoFragment"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_todo" >
+        <action
+            android:id="@+id/action_tasksFragment_to_formTasksFragment"
+            app:destination="@id/formTasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formTasksFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.form.FormTasksFragment"
+        android:label="fragment_form_tasks"
+        tools:layout="@layout/fragment_form_tasks" />
+    <navigation android:id="@+id/authentication"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.gdsdevtec.tasksdeveloper.ui.auth.login.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_loginFragment_to_recoverAccountFragment"
+                app:destination="@id/recoverAccountFragment" />
+            <action
+                android:id="@+id/action_loginFragment_to_registerFragment"
+                app:destination="@id/registerFragment" />
+            <action
+                android:id="@+id/action_loginFragment_to_tasksFragment"
+                app:destination="@id/tasksFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/registerFragment"
+            android:name="com.gdsdevtec.tasksdeveloper.ui.auth.register.RegisterFragment"
+            android:label="fragment_register"
+            tools:layout="@layout/fragment_register" />
+        <fragment
+            android:id="@+id/recoverAccountFragment"
+            android:name="com.gdsdevtec.tasksdeveloper.ui.auth.recover.RecoverAccountFragment"
+            android:label="fragment_recover_account"
+            tools:layout="@layout/fragment_recover_account" />
+    </navigation>
+</navigation>
