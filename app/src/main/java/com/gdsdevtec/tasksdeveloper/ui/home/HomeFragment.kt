@@ -34,7 +34,9 @@ class HomeFragment : Fragment() {
             adapter = pageAdapter
             offscreenPageLimit = pageAdapter.itemCount
         }
-        binding.btnLogout.setOnClickListener { }
+        binding.btnLogout.setOnClickListener {
+            activity?.finish()
+        }
         attachPageAdapter(pageAdapter)
     }
 
