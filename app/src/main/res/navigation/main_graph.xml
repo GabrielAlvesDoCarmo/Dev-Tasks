@@ -43,9 +43,6 @@
             <action
                 android:id="@+id/action_loginFragment_to_registerFragment"
                 app:destination="@id/registerFragment" />
-            <action
-                android:id="@+id/action_loginFragment_to_tasksFragment"
-                app:destination="@id/tasksFragment" />
         </fragment>
         <fragment
             android:id="@+id/registerFragment"
@@ -57,5 +54,33 @@
             android:name="com.gdsdevtec.tasksdeveloper.ui.auth.recover.RecoverAccountFragment"
             android:label="fragment_recover_account"
             tools:layout="@layout/fragment_recover_account" />
+        <action
+            android:id="@+id/action_global_homeFragment"
+            app:destination="@id/homeFragment" />
     </navigation>
+    <fragment
+        android:id="@+id/doingFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.doing.DoingFragment"
+        android:label="fragment_doing"
+        tools:layout="@layout/fragment_doing" />
+    <fragment
+        android:id="@+id/doneFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.done.DoneFragment"
+        android:label="fragment_done"
+        tools:layout="@layout/fragment_done" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_doneFragment"
+            app:destination="@id/doneFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_doingFragment"
+            app:destination="@id/doingFragment" />
+    </fragment>
 </navigation>

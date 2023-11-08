@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
                 nextFragment(R.id.action_loginFragment_to_recoverAccountFragment)
             }
             btnLogin.setOnClickListener {
-                nextFragment(R.id.action_loginFragment_to_tasksFragment)
+                nextFragment(R.id.action_global_homeFragment)
             }
         }
     }
