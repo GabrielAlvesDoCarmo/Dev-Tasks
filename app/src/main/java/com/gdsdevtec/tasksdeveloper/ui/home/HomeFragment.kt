@@ -16,14 +16,6 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-    private val pageAdapter by lazy {
-        HomeViewPagerAdapter(requireActivity()).apply {
-            addFragment(TodoFragment(), R.string.status_task_todo)
-            addFragment(DoingFragment(), R.string.status_task_doing)
-            addFragment(DoneFragment(), R.string.status_task_done)
-        }
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -37,15 +29,27 @@ class HomeFragment : Fragment() {
     }
 
     private fun initTabs() {
+        val pageAdapter = setupPageAdapter()
         binding.viewPager.apply {
             adapter = pageAdapter
             offscreenPageLimit = pageAdapter.itemCount
         }
         binding.btnLogout.setOnClickListener { }
+        attachPageAdapter(pageAdapter)
+    }
+
+    private fun attachPageAdapter(pageAdapter: HomeViewPagerAdapter) {
         TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position ->
             tab.text = getString(pageAdapter.getTitle(position))
         }.attach()
     }
+
+    private fun setupPageAdapter() = HomeViewPagerAdapter(requireActivity()).apply {
+        addFragment(TodoFragment(), R.string.status_task_todo)
+        addFragment(DoingFragment(), R.string.status_task_doing)
+        addFragment(DoneFragment(), R.string.status_task_done)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -18,8 +18,10 @@ fun Fragment.nextFragment(
 ) = findNavController().navigate(action)
 
 fun Fragment.initToolbar(toolbar: Toolbar) {
-    (activity as AppCompatActivity).setSupportActionBar(toolbar)
-    (activity as AppCompatActivity).title = ""
-    (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    toolbar.setNavigationOnClickListener { activity?.onBackPressed() }
+    (activity as AppCompatActivity).apply {
+        setSupportActionBar(toolbar)
+        title = ""
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+    toolbar.setNavigationOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
 }

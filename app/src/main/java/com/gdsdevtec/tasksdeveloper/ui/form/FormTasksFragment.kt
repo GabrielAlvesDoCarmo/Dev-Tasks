@@ -1,13 +1,11 @@
 package com.gdsdevtec.tasksdeveloper.ui.form
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.gdsdevtec.tasksdeveloper.R
+import androidx.fragment.app.Fragment
 import com.gdsdevtec.tasksdeveloper.databinding.FragmentFormTasksBinding
-import com.gdsdevtec.tasksdeveloper.databinding.FragmentSplashBinding
 import com.gdsdevtec.tasksdeveloper.util.initToolbar
 
 class FormTasksFragment : Fragment() {
@@ -23,9 +21,7 @@ class FormTasksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
-            initToolbar(includeToolbar.toolbar)
-        }
+        initToolbar(binding.includeToolbar.toolbar)
     }
 
     override fun onDestroy() {

@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.gdsdevtec.tasksdeveloper.R
 import com.gdsdevtec.tasksdeveloper.databinding.FragmentTodoBinding
+import com.gdsdevtec.tasksdeveloper.util.nextFragment
 
 class TodoFragment : Fragment() {
 
@@ -21,6 +23,15 @@ class TodoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupFragment()
+    }
+
+    private fun setupFragment() {
+        binding.apply {
+            fabAdd.setOnClickListener {
+                nextFragment(R.id.action_homeFragment_to_formTasksFragment)
+            }
+        }
     }
 
     override fun onDestroyView() {
