@@ -43,7 +43,8 @@ class TodoFragment : Fragment(),ButtonAdapterClick {
     }
 
     private fun initRecyclerView(taskList: List<TaskModel>) = binding.apply {
-        taskAdapter = TaskAdapter(taskList,this@TodoFragment)
+        taskAdapter = TaskAdapter(this@TodoFragment)
+        taskAdapter.submitList(taskList)
         rvTasks.apply {
             setHasFixedSize(true)
             adapter = taskAdapter

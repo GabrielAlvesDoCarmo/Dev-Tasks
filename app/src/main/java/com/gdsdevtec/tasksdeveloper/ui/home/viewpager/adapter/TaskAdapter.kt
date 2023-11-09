@@ -2,6 +2,8 @@ package com.gdsdevtec.tasksdeveloper.ui.home.viewpager.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.gdsdevtec.tasksdeveloper.databinding.ItemTaskBinding
 import com.gdsdevtec.tasksdeveloper.ui.form.model.FormTaskStateEnum.DOING
@@ -11,12 +13,12 @@ import com.gdsdevtec.tasksdeveloper.ui.home.container.model.TaskModel
 import com.gdsdevtec.tasksdeveloper.util.hide
 
 class TaskAdapter(
-    private val listTask: List<TaskModel>,
     private val taskSelected: ButtonAdapterClick,
-) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+) : ListAdapter<TaskModel, TaskAdapter.TaskViewHolder>(diffUtil) {
     inner class TaskViewHolder(
         val binding: ItemTaskBinding,
     ) : RecyclerView.ViewHolder(binding.root)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         return TaskViewHolder(
             ItemTaskBinding.inflate(
@@ -25,10 +27,8 @@ class TaskAdapter(
         )
     }
 
-    override fun getItemCount() = listTask.size
-
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        val task = listTask[position]
+        val task = getItem(position)
         bindingLayout(task, holder.binding)
     }
 
@@ -56,6 +56,7 @@ class TaskAdapter(
                     taskSelected.clickBack(task)
                 }
             }
+
             DOING -> {
                 binding.ibActionBack.setOnClickListener {
                     taskSelected.clickBack(task)
@@ -71,5 +72,21 @@ class TaskAdapter(
         binding.btnDelete.setOnClickListener { taskSelected.clickRemove(task) }
         binding.btnEdit.setOnClickListener { taskSelected.clickEdit(task) }
         binding.btnDetails.setOnClickListener { taskSelected.clickDetails(task) }
+    }
+
+    private companion object {
+
+        private val diffUtil = object : DiffUtil.ItemCallback<TaskModel>() {
+            override fun areItemsTheSame(oldItem: TaskModel, newItem: TaskModel): Boolean {
+                return oldItem.id == newItem.id &&
+                        oldItem.description == newItem.description
+            }
+
+            override fun areContentsTheSame(oldItem: TaskModel, newItem: TaskModel): Boolean {
+                return oldItem == newItem &&
+                        oldItem.description == newItem.description
+            }
+
+        }
     }
 }
