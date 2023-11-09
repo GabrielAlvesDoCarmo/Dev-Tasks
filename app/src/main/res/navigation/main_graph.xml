@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/formTasksFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.form.FormTasksFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.form.view.FormTasksFragment"
         android:label="fragment_form_tasks"
         tools:layout="@layout/fragment_form_tasks" />
     <navigation android:id="@+id/authentication"
@@ -51,17 +51,17 @@
     </navigation>
     <fragment
         android:id="@+id/doingFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.doing.DoingFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.doing.view.DoingFragment"
         android:label="fragment_doing"
         tools:layout="@layout/fragment_doing" />
     <fragment
         android:id="@+id/doneFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.done.DoneFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.done.view.DoneFragment"
         android:label="fragment_done"
         tools:layout="@layout/fragment_done" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.HomeFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.container.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/todoFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.todo.TodoFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.todo.view.TodoFragment"
         android:label="fragment_todo"
         tools:layout="@layout/fragment_todo" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.gdsdevtec.tasksdeveloper.ui.home
+package com.gdsdevtec.tasksdeveloper.ui.home.container
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.gdsdevtec.tasksdeveloper.R
 import com.gdsdevtec.tasksdeveloper.databinding.FragmentHomeBinding
-import com.gdsdevtec.tasksdeveloper.ui.home.doing.DoingFragment
-import com.gdsdevtec.tasksdeveloper.ui.home.done.DoneFragment
-import com.gdsdevtec.tasksdeveloper.ui.home.todo.TodoFragment
+import com.gdsdevtec.tasksdeveloper.ui.home.doing.view.DoingFragment
+import com.gdsdevtec.tasksdeveloper.ui.home.done.view.DoneFragment
+import com.gdsdevtec.tasksdeveloper.ui.home.todo.view.TodoFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {

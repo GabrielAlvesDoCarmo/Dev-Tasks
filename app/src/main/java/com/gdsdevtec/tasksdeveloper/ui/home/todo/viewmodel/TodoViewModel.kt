@@ -1,4 +1,4 @@
-package com.gdsdevtec.tasksdeveloper.ui.home.todo
+package com.gdsdevtec.tasksdeveloper.ui.home.todo.viewmodel
 
 import androidx.lifecycle.ViewModel
 

@@ -55,6 +55,7 @@
     <!--    Form Task Fragment-->
     <string name="text_title_toolbar_form_task_fragment">Nova tarefa</string>
     <string name="description_empty_form_task_fragment">Informe uma descrição.</string>
+    <string name="description_short_form_task_fragment">Informe uma descrição maior.</string>
     <string name="text_status_form_task_fragment">Status</string>
     <string name="text_description_form_task_fragment">Descrição</string>
     <string name="hint_edit_description_form_task_fragment">Criar nova tela de login do app</string>

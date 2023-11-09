@@ -1,4 +1,4 @@
-package com.gdsdevtec.tasksdeveloper.ui.home.done
+package com.gdsdevtec.tasksdeveloper.ui.home.done.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
