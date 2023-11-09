@@ -9,9 +9,10 @@ import com.gdsdevtec.tasksdeveloper.databinding.FragmentDoneBinding
 import com.gdsdevtec.tasksdeveloper.ui.form.model.FormTaskStateEnum
 import com.gdsdevtec.tasksdeveloper.ui.home.container.model.TaskModel
 import com.gdsdevtec.tasksdeveloper.ui.home.viewpager.adapter.ButtonAdapterClick
+import com.gdsdevtec.tasksdeveloper.ui.home.viewpager.adapter.ButtonArrowAdapter
 import com.gdsdevtec.tasksdeveloper.ui.home.viewpager.adapter.TaskAdapter
 
-class DoneFragment : Fragment(),ButtonAdapterClick {
+class DoneFragment : Fragment(),ButtonAdapterClick , ButtonArrowAdapter {
 
     private var _binding: FragmentDoneBinding? = null
     private val binding get() = _binding!!
@@ -31,7 +32,7 @@ class DoneFragment : Fragment(),ButtonAdapterClick {
     }
 
     private fun initRecyclerView(taskList: List<TaskModel>) = binding.apply {
-        taskAdapter = TaskAdapter(this@DoneFragment)
+        taskAdapter = TaskAdapter(this@DoneFragment,this@DoneFragment)
         taskAdapter.submitList(taskList)
 
         rvTasks.apply {
