@@ -21,16 +21,23 @@ fun Fragment.initToolbar(toolbar: Toolbar) {
         title = ""
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-    toolbar.setNavigationOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
+    toolbar.setNavigationOnClickListener { popScreen() }
 }
-fun Fragment.messageToast(msg :Int?,duration : Int = Toast.LENGTH_SHORT) =
-    msg?.let { Toast.makeText(requireContext(), it,duration).show() }
+
+fun Fragment.popScreen() = activity?.onBackPressedDispatcher?.onBackPressed()
+
+fun Fragment.messageToast(msg: Int?, duration: Int = Toast.LENGTH_SHORT) =
+    msg?.let { Toast.makeText(requireContext(), it, duration).show() }
+
+fun Fragment.messageToast(msg: String?, duration: Int = Toast.LENGTH_SHORT) =
+    msg?.let { Toast.makeText(requireContext(), it, duration).show() }
 
 
-fun View.show()  {
+fun View.show() {
     this.isVisible = true
 }
-fun View.hide()  {
+
+fun View.hide() {
     this.isVisible = false
 }
 

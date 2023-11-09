@@ -1,15 +1,15 @@
 package com.gdsdevtec.tasksdeveloper.ui.splash
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import com.gdsdevtec.tasksdeveloper.R
 import com.gdsdevtec.tasksdeveloper.databinding.FragmentSplashBinding
 import com.gdsdevtec.tasksdeveloper.util.nextFragment
-import com.gdsdevtec.tasksdeveloper.util.splashDelay
 
 class SplashFragment : Fragment() {
     private var _binding: FragmentSplashBinding? = null
@@ -29,7 +29,9 @@ class SplashFragment : Fragment() {
     private fun action() = splashDelay {
         nextFragment(R.id.action_splashFragment_to_loginFragment)
     }
-
+    private fun splashDelay(action: () -> Unit) {
+        Handler(Looper.getMainLooper()).postDelayed({ action.invoke() }, 3000)
+    }
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

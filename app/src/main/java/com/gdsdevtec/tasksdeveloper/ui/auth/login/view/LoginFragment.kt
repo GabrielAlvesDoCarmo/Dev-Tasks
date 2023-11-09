@@ -8,8 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.gdsdevtec.tasksdeveloper.R
 import com.gdsdevtec.tasksdeveloper.databinding.FragmentLoginBinding
-import com.gdsdevtec.tasksdeveloper.ui.FactoryViewModel
-import com.gdsdevtec.tasksdeveloper.ui.auth.login.usecase.LoginUseCase
+import com.gdsdevtec.tasksdeveloper.di.ViewModelInjection
 import com.gdsdevtec.tasksdeveloper.ui.auth.login.viewmodel.LoginAction
 import com.gdsdevtec.tasksdeveloper.ui.auth.login.viewmodel.LoginState
 import com.gdsdevtec.tasksdeveloper.ui.auth.login.viewmodel.LoginViewModel
@@ -26,9 +25,7 @@ class LoginFragment : Fragment() {
 
     private val viewModel: LoginViewModel by viewModels(
         factoryProducer = {
-            FactoryViewModel(
-                LoginUseCase()
-            )
+            ViewModelInjection.getFactory()
         }
     )
 

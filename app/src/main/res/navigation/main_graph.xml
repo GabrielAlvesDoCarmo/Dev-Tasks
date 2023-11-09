@@ -42,7 +42,7 @@
             tools:layout="@layout/fragment_register" />
         <fragment
             android:id="@+id/recoverAccountFragment"
-            android:name="com.gdsdevtec.tasksdeveloper.ui.auth.recover.RecoverAccountFragment"
+            android:name="com.gdsdevtec.tasksdeveloper.ui.auth.recover.view.RecoverAccountFragment"
             android:label="fragment_recover_account"
             tools:layout="@layout/fragment_recover_account" />
         <action
