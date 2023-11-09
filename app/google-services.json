@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "907292121474",
+    "project_id": "task-developer",
+    "storage_bucket": "task-developer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907292121474:android:ed8ec56dc97f4b5fc2d79b",
+        "android_client_info": {
+          "package_name": "com.gdsdevtec.tasksdeveloper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXakoimJBtbJ9EUJoHl1C_6FwOkNqq_KY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
