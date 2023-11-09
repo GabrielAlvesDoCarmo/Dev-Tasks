@@ -14,6 +14,7 @@ import com.gdsdevtec.tasksdeveloper.util.hide
 import com.gdsdevtec.tasksdeveloper.util.initToolbar
 import com.gdsdevtec.tasksdeveloper.util.messageToast
 import com.gdsdevtec.tasksdeveloper.util.show
+import com.gdsdevtec.tasksdeveloper.util.showBottomSheet
 
 class FormTasksFragment : Fragment() {
     private var _binding: FragmentFormTasksBinding? = null
@@ -54,9 +55,13 @@ class FormTasksFragment : Fragment() {
                     binding.progressBar.hide()
                     messageToast(formState.formTaskUIModel?.msgSuccess)
                 }
+
                 formState.isDescriptionError -> {
-                    messageToast(formState.formTaskUIModel?.msgError)
+                    formState.formTaskUIModel?.msgError?.let {msg->
+                        showBottomSheet(message = msg)
+                    }
                 }
+
                 formState.loading -> {
                     binding.progressBar.show()
                 }

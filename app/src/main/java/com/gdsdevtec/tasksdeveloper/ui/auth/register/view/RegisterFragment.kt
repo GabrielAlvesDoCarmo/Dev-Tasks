@@ -13,8 +13,8 @@ import com.gdsdevtec.tasksdeveloper.ui.auth.register.viewmodel.RegisterViewModel
 import com.gdsdevtec.tasksdeveloper.util.hide
 import com.gdsdevtec.tasksdeveloper.util.hideKeyboard
 import com.gdsdevtec.tasksdeveloper.util.initToolbar
-import com.gdsdevtec.tasksdeveloper.util.messageToast
 import com.gdsdevtec.tasksdeveloper.util.show
+import com.gdsdevtec.tasksdeveloper.util.showBottomSheet
 
 class RegisterFragment : Fragment() {
 
@@ -62,12 +62,16 @@ class RegisterFragment : Fragment() {
             when {
                 registerState.isMsgEmailError -> {
                     binding.progressBar.hide()
-                    messageToast(registerState.registerUIModel?.msgEmailError)
+                    registerState.registerUIModel?.msgEmailError?.let {
+                        showBottomSheet(message = it)
+                    }
                 }
 
                 registerState.isMsgPasswordError -> {
                     binding.progressBar.hide()
-                    messageToast(registerState.registerUIModel?.msgPasswordError)
+                    registerState.registerUIModel?.msgPasswordError?.let {
+                        showBottomSheet(message = it)
+                    }
                 }
 
                 registerState.loading -> {

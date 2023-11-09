@@ -22,23 +22,21 @@ class LoginViewModel(
     }
     private fun validateForm(email: String, password: String) {
         when (useCase.validateField(LoginModel(email, password))) {
-            LoginUseCaseState.EmailInvalid -> emailInvalid()
-            LoginUseCaseState.PasswordInvalid -> passwordInvalid()
+            LoginUseCaseState.EmailInvalid -> emailInvalid( R.string.invalid_email_register_fragment)
+            LoginUseCaseState.EmailIsEmpty -> emailInvalid( R.string.email_empty)
+            LoginUseCaseState.PasswordInvalid -> passwordInvalid(R.string.password_invalid)
+            LoginUseCaseState.PasswordIsEmpty -> passwordInvalid(R.string.password_empty)
             LoginUseCaseState.SuccessForm -> successForm()
         }
     }
-    private fun emailInvalid() {
+    private fun emailInvalid(msg :Int) {
         _state.value = getState().setError(
-            LoginUiModel(
-                msgErrorEmail = R.string.email_empty
-            )
+            LoginUiModel(msgErrorEmail =msg)
         )
     }
-    private fun passwordInvalid() {
+    private fun passwordInvalid(msg: Int) {
         _state.value = getState().setError(
-            LoginUiModel(
-                msgErrorPassword = R.string.password_empty
-            )
+            LoginUiModel(msgErrorPassword = msg)
         )
     }
     private fun successForm() {

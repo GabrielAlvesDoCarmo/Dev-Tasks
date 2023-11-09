@@ -14,9 +14,9 @@ import com.gdsdevtec.tasksdeveloper.ui.auth.login.viewmodel.LoginState
 import com.gdsdevtec.tasksdeveloper.ui.auth.login.viewmodel.LoginViewModel
 import com.gdsdevtec.tasksdeveloper.util.hide
 import com.gdsdevtec.tasksdeveloper.util.hideKeyboard
-import com.gdsdevtec.tasksdeveloper.util.messageToast
 import com.gdsdevtec.tasksdeveloper.util.nextFragment
 import com.gdsdevtec.tasksdeveloper.util.show
+import com.gdsdevtec.tasksdeveloper.util.showBottomSheet
 
 class LoginFragment : Fragment() {
 
@@ -60,12 +60,16 @@ class LoginFragment : Fragment() {
 
     private fun emailError(loginState: LoginState) {
         binding.progressBar.hide()
-        messageToast(loginState.loginUiModel?.msgErrorEmail)
+        loginState.loginUiModel?.msgErrorEmail?.let {
+            showBottomSheet(message = it)
+        }
     }
 
     private fun passwordError(loginState: LoginState) {
         binding.progressBar.hide()
-        messageToast(loginState.loginUiModel?.msgErrorPassword)
+        loginState.loginUiModel?.msgErrorPassword?.let {
+            showBottomSheet(message = it)
+        }
     }
 
     private fun setupFragment() {

@@ -17,6 +17,7 @@ import com.gdsdevtec.tasksdeveloper.util.initToolbar
 import com.gdsdevtec.tasksdeveloper.util.messageToast
 import com.gdsdevtec.tasksdeveloper.util.popScreen
 import com.gdsdevtec.tasksdeveloper.util.show
+import com.gdsdevtec.tasksdeveloper.util.showBottomSheet
 
 class RecoverAccountFragment : Fragment() {
 
@@ -72,7 +73,9 @@ class RecoverAccountFragment : Fragment() {
 
     private fun emailError(recoverState: RecoverState) {
         binding.progressBar.hide()
-        messageToast(recoverState.recoverUIModel?.msgError)
+        recoverState.recoverUIModel?.msgError?.let {
+            showBottomSheet(message = it)
+        }
     }
 
     private fun setupFragment() {
