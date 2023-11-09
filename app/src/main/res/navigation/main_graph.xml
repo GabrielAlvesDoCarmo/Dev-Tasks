@@ -37,7 +37,7 @@
         </fragment>
         <fragment
             android:id="@+id/registerFragment"
-            android:name="com.gdsdevtec.tasksdeveloper.ui.auth.register.RegisterFragment"
+            android:name="com.gdsdevtec.tasksdeveloper.ui.auth.register.view.RegisterFragment"
             android:label="fragment_register"
             tools:layout="@layout/fragment_register" />
         <fragment
