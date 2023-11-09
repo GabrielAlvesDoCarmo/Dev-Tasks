@@ -10,9 +10,9 @@ import com.gdsdevtec.tasksdeveloper.ui.auth.register.usecase.RegisterUseCase
 import com.gdsdevtec.tasksdeveloper.ui.auth.register.viewmodel.RegisterViewModel
 import com.gdsdevtec.tasksdeveloper.ui.form.usecase.FormTaskUseCase
 import com.gdsdevtec.tasksdeveloper.ui.form.viewmodel.FormTasksViewModel
-import com.gdsdevtec.tasksdeveloper.ui.home.doing.viewmodel.DoingViewModel
-import com.gdsdevtec.tasksdeveloper.ui.home.done.viewmodel.DoneViewModel
-import com.gdsdevtec.tasksdeveloper.ui.home.todo.viewmodel.TodoViewModel
+import com.gdsdevtec.tasksdeveloper.ui.home.viewpager.doing.viewmodel.DoingViewModel
+import com.gdsdevtec.tasksdeveloper.ui.home.viewpager.done.viewmodel.DoneViewModel
+import com.gdsdevtec.tasksdeveloper.ui.home.viewpager.todo.viewmodel.TodoViewModel
 
 @Suppress("UNCHECKED_CAST")
 class FactoryViewModel(

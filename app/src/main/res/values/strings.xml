@@ -71,7 +71,6 @@
     <string name="text_delete_sucess_form_task_fragment">Tarefa removida com sucesso.</string>
 
     <string name="text_toolbar_update_form_task_fragment">Editando tarefa...</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="description_fab_todo">Botão adicionar nova tarefa</string>
     <string name="recover_email_success">Email de recuperacao enviado para %s</string>

@@ -1,4 +1,4 @@
-package com.gdsdevtec.tasksdeveloper.ui.home.container
+package com.gdsdevtec.tasksdeveloper.ui.home.container.view
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

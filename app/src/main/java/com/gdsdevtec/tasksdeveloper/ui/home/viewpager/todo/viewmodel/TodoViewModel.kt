@@ -1,4 +1,4 @@
-package com.gdsdevtec.tasksdeveloper.ui.home.todo.viewmodel
+package com.gdsdevtec.tasksdeveloper.ui.home.viewpager.todo.viewmodel
 
 import androidx.lifecycle.ViewModel
 

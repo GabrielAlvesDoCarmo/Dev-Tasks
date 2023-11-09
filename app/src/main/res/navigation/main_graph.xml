@@ -51,17 +51,17 @@
     </navigation>
     <fragment
         android:id="@+id/doingFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.doing.view.DoingFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.viewpager.doing.view.DoingFragment"
         android:label="fragment_doing"
         tools:layout="@layout/fragment_doing" />
     <fragment
         android:id="@+id/doneFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.done.view.DoneFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.viewpager.done.view.DoneFragment"
         android:label="fragment_done"
         tools:layout="@layout/fragment_done" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.container.HomeFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.container.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/todoFragment"
-        android:name="com.gdsdevtec.tasksdeveloper.ui.home.todo.view.TodoFragment"
+        android:name="com.gdsdevtec.tasksdeveloper.ui.home.viewpager.todo.view.TodoFragment"
         android:label="fragment_todo"
         tools:layout="@layout/fragment_todo" />
 </navigation>

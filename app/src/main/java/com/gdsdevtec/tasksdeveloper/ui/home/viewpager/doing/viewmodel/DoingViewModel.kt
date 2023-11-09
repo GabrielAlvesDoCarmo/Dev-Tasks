@@ -1,4 +1,4 @@
-package com.gdsdevtec.tasksdeveloper.ui.home.doing.viewmodel
+package com.gdsdevtec.tasksdeveloper.ui.home.viewpager.doing.viewmodel
 
 import androidx.lifecycle.ViewModel
 

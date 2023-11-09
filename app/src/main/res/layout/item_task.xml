@@ -32,6 +32,18 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Criar layout da tela de login do app" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ib_action_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back"
+                android:tint="@color/color_default"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEdit"
+                app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnEdit" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDelete"
                 android:layout_width="wrap_content"
@@ -41,7 +53,7 @@
                 android:background="@drawable/bg_btn"
                 android:text="Remover"
                 android:textAllCaps="false"
-                app:backgroundTint="@color/color_delete"
+                app:backgroundTint="#DF1401"
                 app:layout_constraintBottom_toBottomOf="@+id/btnEdit"
                 app:layout_constraintEnd_toStartOf="@+id/btnEdit"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -77,11 +89,23 @@
                 android:background="@drawable/bg_btn"
                 android:text="Detalhes"
                 android:textAllCaps="false"
-                app:backgroundTint="@color/color_details"
+                app:backgroundTint="#04D50E"
                 app:layout_constraintBottom_toBottomOf="@+id/btnEdit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/btnEdit"
+                app:layout_constraintTop_toTopOf="@+id/btnEdit" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ib_action_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_next"
+                android:tint="@color/color_default"
+                app:layout_constraintBottom_toBottomOf="@+id/btnEdit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btnDetails"
                 app:layout_constraintTop_toTopOf="@+id/btnEdit" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
