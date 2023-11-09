@@ -46,7 +46,9 @@ class HomeFragment : Fragment() {
         }.attach()
     }
 
-    private fun setupPageAdapter() = HomeViewPagerAdapter(requireActivity()).apply {
+    private fun setupPageAdapter() = HomeViewPagerAdapter(
+        requireActivity()
+    ).apply {
         addFragment(TodoFragment(), R.string.status_task_todo)
         addFragment(DoingFragment(), R.string.status_task_doing)
         addFragment(DoneFragment(), R.string.status_task_done)
