@@ -14,10 +14,12 @@ data class RegisterState(
     fun setError(
         registerUIModel: RegisterUIModel,
     ) = copy(
+        loading = false,
         registerUIModel = registerUIModel
     )
 
     fun showSuccess() = copy(
+        loading = false,
         success = true
     )
 
