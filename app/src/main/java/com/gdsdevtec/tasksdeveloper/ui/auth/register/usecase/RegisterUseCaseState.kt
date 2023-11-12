@@ -1,10 +1,17 @@
 package com.gdsdevtec.tasksdeveloper.ui.auth.register.usecase
 
 sealed interface RegisterUseCaseState {
+    sealed interface Form {
+        data object EmailInvalid : Form
+        data object EmailIsEmpty : Form
+        data object PasswordInvalid : Form
+        data object PasswordIsEmpty : Form
+        data object SuccessRegisterForm :Form
 
-    data object EmailInvalid : RegisterUseCaseState
-    data object EmailIsEmpty : RegisterUseCaseState
-    data object PasswordInvalid : RegisterUseCaseState
-    data object PasswordIsEmpty : RegisterUseCaseState
-    data object SuccessRegisterForm :RegisterUseCaseState
+    }
+    sealed interface FirebaseRegister{
+        data class Error(val msg : String) : FirebaseRegister
+        data object Success : FirebaseRegister
+    }
+
 }

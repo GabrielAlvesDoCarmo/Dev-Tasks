@@ -47,6 +47,7 @@
     <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
     <string name="email_in_use_register_fragment">Este e-mail já está em uso.</string>
     <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+    <string name="generic_error_firebase_register_user">Erro firebase</string>
 
     <!--    Home Fragment-->
     <string name="text_title_dialog_confirm_logout">Deseja sair da sua conta ?</string>

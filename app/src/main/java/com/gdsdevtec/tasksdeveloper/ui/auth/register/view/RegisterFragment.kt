@@ -78,7 +78,15 @@ class RegisterFragment : Fragment() {
                     binding.progressBar.show()
                 }
 
+                registerState.isMsgFirebaseError -> {
+                    binding.progressBar.hide()
+                    registerState.registerUIModel?.msgFirebaseRegister?.let {
+                        showBottomSheet(message = it)
+                    }
+                }
+
                 registerState.success -> {
+                    binding.progressBar.hide()
 
                 }
             }
