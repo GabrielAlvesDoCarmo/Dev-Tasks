@@ -9,12 +9,22 @@ data class LoginState(
 ) {
     val isEmailError: Boolean get() = !success && loginUiModel?.msgErrorEmail != null
     val isPasswordError: Boolean get() = !success && loginUiModel?.msgErrorPassword != null
+    val isLoginError: Boolean get() = !success && loginUiModel?.msgErrorFirebase != null
+
+    val userLogged : Boolean get() = !success && loginUiModel?.isUserLogged == true
+
+
+    fun setUserLogged(loginUiModel: LoginUiModel) = copy(
+        loading = false,
+        loginUiModel = loginUiModel
+    )
 
     fun setError(loginUiModel: LoginUiModel) = copy(
         success = false,
         loginUiModel = loginUiModel,
         loading = false
     )
+
     fun showLoading() = copy(
         loading = true
     )

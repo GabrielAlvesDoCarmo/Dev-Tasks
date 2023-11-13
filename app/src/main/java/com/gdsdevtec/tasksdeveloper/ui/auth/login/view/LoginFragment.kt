@@ -47,6 +47,11 @@ class LoginFragment : Fragment() {
             when {
                 loginState.isEmailError -> emailError(loginState)
                 loginState.isPasswordError -> passwordError(loginState)
+                loginState.isLoginError -> loginError(loginState)
+                loginState.userLogged->{
+                    binding.progressBar.hide()
+                    nextFragment(R.id.action_global_homeFragment)
+                }
                 loginState.loading -> binding.progressBar.show()
                 loginState.success -> success()
             }
@@ -56,6 +61,13 @@ class LoginFragment : Fragment() {
     private fun success() {
         binding.progressBar.hide()
         nextFragment(R.id.action_global_homeFragment)
+    }
+
+    private fun loginError(loginState: LoginState) {
+        binding.progressBar.hide()
+        loginState.loginUiModel?.msgErrorFirebase?.let {
+            showBottomSheet(message = it)
+        }
     }
 
     private fun emailError(loginState: LoginState) {

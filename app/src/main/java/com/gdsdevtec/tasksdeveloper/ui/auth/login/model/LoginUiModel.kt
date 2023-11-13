@@ -5,4 +5,6 @@ import androidx.annotation.StringRes
 data class LoginUiModel(
     @StringRes val msgErrorEmail: Int? = null,
     @StringRes val msgErrorPassword: Int? = null,
+    val msgErrorFirebase: String? = null,
+    val isUserLogged : Boolean = false
 )

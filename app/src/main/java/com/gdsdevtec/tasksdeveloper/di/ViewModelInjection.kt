@@ -8,8 +8,12 @@ import com.gdsdevtec.tasksdeveloper.ui.form.usecase.FormTaskUseCase
 
 data object ViewModelInjection {
     private val getRecoverUseCase : RecoverUseCase get() = RecoverUseCase()
-    private val getLoginUseCase : LoginUseCase get() = LoginUseCase()
-    private val getRegisterUseCase : RegisterUseCase get() = RegisterUseCase(RepositoryInjection.getRegisterRepository())
+    private val getLoginUseCase : LoginUseCase get() = LoginUseCase(
+        RepositoryInjection.getLoginRepository()
+    )
+    private val getRegisterUseCase : RegisterUseCase get() = RegisterUseCase(
+        RepositoryInjection.getRegisterRepository()
+    )
     private val getFormTaskUseCase : FormTaskUseCase get() = FormTaskUseCase()
     fun getFactory() = FactoryViewModel(
         loginUseCase = getLoginUseCase,

@@ -5,4 +5,6 @@ sealed interface LoginAction{
         val email:String,
         val password :String
     ) : LoginAction
+
+    data object IsUserLogged : LoginAction
 }

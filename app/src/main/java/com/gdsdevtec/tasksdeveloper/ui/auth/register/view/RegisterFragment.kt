@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.gdsdevtec.tasksdeveloper.R
 import com.gdsdevtec.tasksdeveloper.databinding.FragmentRegisterBinding
 import com.gdsdevtec.tasksdeveloper.di.ViewModelInjection
 import com.gdsdevtec.tasksdeveloper.ui.auth.register.viewmodel.RegisterActions
@@ -13,6 +14,7 @@ import com.gdsdevtec.tasksdeveloper.ui.auth.register.viewmodel.RegisterViewModel
 import com.gdsdevtec.tasksdeveloper.util.hide
 import com.gdsdevtec.tasksdeveloper.util.hideKeyboard
 import com.gdsdevtec.tasksdeveloper.util.initToolbar
+import com.gdsdevtec.tasksdeveloper.util.nextFragment
 import com.gdsdevtec.tasksdeveloper.util.show
 import com.gdsdevtec.tasksdeveloper.util.showBottomSheet
 
@@ -87,7 +89,7 @@ class RegisterFragment : Fragment() {
 
                 registerState.success -> {
                     binding.progressBar.hide()
-
+                    nextFragment(R.id.action_global_homeFragment)
                 }
             }
         }
